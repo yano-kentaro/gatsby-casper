@@ -108,7 +108,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   // 2018-08-20
   const datetime = format(date, 'yyyy-MM-dd');
   // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
+  const displayDatetime = datetime;
 
   return (
     <IndexLayout className="post-template">
