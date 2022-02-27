@@ -12,7 +12,7 @@ interface SiteNavLogoProps {
 export const SiteNavLogo = () => (
   <StaticQuery
     query={graphql`query HeadingQuery {
-  logo: file(relativePath: {eq: "img/ghost-logo.png"}) {
+  logo: file(relativePath: {eq: "img/favicon-skelton.webp"}) {
     childImageSharp {
       gatsbyImageData(quality: 100, width: 500, layout: FIXED)
     }
