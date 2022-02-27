@@ -15,7 +15,7 @@ const SubscribeLogo = () => (
   <StaticQuery
     query={graphql`
       query SubscribeOverlayLogo {
-        logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+        logo: file(relativePath: { eq: "img/kengineer-dev-logo2.png" }) {
           childImageSharp {
             gatsbyImageData(quality: 100, width: 500, layout: FIXED)
           }
