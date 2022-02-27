@@ -13,3 +13,8 @@
   website: https://ghost.org/
   location: San Francisco
   profile_image: img/alex-knight-326705-unsplash.jpg
+- name: Ken
+  avatar: avatars/profile.webp
+  bio: Amazon Lexに最近ハマっている
+  location: 札幌
+  twitter: _KEngineer_
