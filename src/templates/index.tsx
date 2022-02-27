@@ -90,7 +90,7 @@ const IndexPage: React.FC<IndexProps> = props => {
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
-                    style={{ maxHeight: '55px' }}
+                    style={{ maxHeight: '100px' }}
                     src={getSrc(props.data.logo)}
                     alt={config.title}
                   />
@@ -132,7 +132,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/kengineer-dev-logo2.png" }) {
       childImageSharp {
         gatsbyImageData(layout: FIXED)
       }
