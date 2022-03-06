@@ -105,6 +105,14 @@ const PostCardStyles = css`
   min-height: 220px;
   background-size: cover;
   background-color: #fff;
+
+  @media (max-width: 795px) {
+    width: 100%;
+
+    .post-card-image {
+      height: 100%;
+    }
+  }
 `;
 
 const PostCardLarge = css`
