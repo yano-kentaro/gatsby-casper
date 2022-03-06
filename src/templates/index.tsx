@@ -80,9 +80,9 @@ const IndexPage: React.FC<IndexProps> = props => {
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
           className="site-header-background"
-          style={{
-            backgroundImage: `url('${getSrc(props.data.header)}')`,
-          }}
+          // style={{
+          //   backgroundImage: `url('${getSrc(props.data.header)}')`,
+          // }}
         >
           <div css={inner}>
             <SiteNav isHome />
