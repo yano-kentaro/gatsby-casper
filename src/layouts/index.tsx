@@ -17,6 +17,7 @@ const IndexLayout: React.FC<IndexProps> = props => (
     </Helmet>
     <Global
       styles={css`
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
           html,
           body,
           div,
@@ -100,6 +101,7 @@ const IndexLayout: React.FC<IndexProps> = props => (
             font: inherit;
             font-size: 100%;
             vertical-align: baseline;
+            font-family: 'Noto Sans JP', sans-serif;
           }
           body {
             line-height: 1;
@@ -274,7 +276,7 @@ const IndexLayout: React.FC<IndexProps> = props => (
           body {
             overflow-x: hidden;
             color: ${lighten('-0.3', colors.midgrey)};
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+            font-family: -apple-system, BlinkMacSystemFont, 'ヒラギノ角ゴシック', Roboto, Oxygen, Ubuntu,
               Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 1.6rem;
             line-height: 1.6em;
@@ -343,6 +345,19 @@ const IndexLayout: React.FC<IndexProps> = props => (
           ul ol,
           ol ul {
             margin: 0.5em 0 1em;
+            list-style-type: circle;
+          }
+
+          ol ol ol,
+          ol ol ul,
+          ul ul ol,
+          ul ul ul,
+          ul ol ol,
+          ul ol ul,
+          ol ul ol
+          ol ul ul{
+            margin: 0.5em 0 1em;
+            list-style-type: square;
           }
 
           ul {
@@ -473,6 +488,12 @@ const IndexLayout: React.FC<IndexProps> = props => (
             margin: 1.5em 0 0.5em 0;
             font-size: 1.4rem;
             font-weight: 500;
+          }
+
+          p, ul, ol {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 2.25em;
           }
 
           /* globals from screen.css */

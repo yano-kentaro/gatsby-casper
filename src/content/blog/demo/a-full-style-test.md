@@ -1,31 +1,32 @@
 ---
 layout: post
-title: A Full and Comprehensive Style Test
-image: img/testimg-cover.jpg
-author: [Ghost]
-date: 2018-09-30T07:03:47.149Z
+title: プログラミングの学習方法
+image: ../../img/testimg-cover.jpg
+author: [Ken]
+date: 2018-09-30
+excerpt: プログラミング学習の基本
 tags:
   - Tests
   - Getting Started
+  - Job Change
+---
 ---
 
-Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+# プログラミング学習の基本
+
+## プログラミング学習の基本
+
+### プログラミング学習の基本
+
+#### プログラミング学習の基本
+
+##### プログラミング学習の基本
+
+###### プログラミング学習の基本
 
 ---
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
----
+プログラミング学習の基本プログラミング学習の基本プログラミング学習の基本プログラミング学習の基本プログラミング学習の基本プログラミング学習の基本プログラミング学習の基本
 
 Lorem ipsum dolor sit amet, [test link]() adipiscing elit. **This is strong.** Nullam dignissim convallis est. Quisque aliquam. _This is emphasized._ Donec faucibus. Nunc iaculis suscipit dui. 5<sup>3</sup> = 125. Water is H<sub>2</sub>O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <cite>The New York Times</cite> (That’s a citation). <span style="text-decoration:underline;">Underline</span>. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
 
@@ -39,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ### Big Image
 
-![Test Image](img/testimg1.jpg)
+![Test Image](../../img/testimg1.jpg)
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
@@ -47,7 +48,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
 
-![Small Test Image](img/testimg2.jpg)
+![Small Test Image](../../img/testimg2.jpg)
 
 Labore et dolore.
 
@@ -188,3 +189,5 @@ Isn't it beautiful.
 
 _[HTML]: Hyper Text Markup Language
 _[CSS]: Cascading Style Sheets
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://jajaaan.co.jp/css/css-headline/" data-iframely-url="//iframely.net/11Vly0P?card=small"></a></div></div><script async src="//iframely.net/embed.js" charset="utf-8"></script>

@@ -73,7 +73,7 @@ export const AuthorListItem = (props: AuthorListItemProps) => {
       <Link
         css={AuthorAvatar}
         className="author-avatar"
-        to={`/author/${_.kebabCase(props.author.name)}/`}
+        to="/pages/author"
       >
         <GatsbyImage
           image={getImage(props.author.avatar)!}

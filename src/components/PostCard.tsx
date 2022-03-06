@@ -77,7 +77,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
             <span>
               {post.frontmatter.author.map((author, index) => (
                 <React.Fragment key={author.name}>
-                  <Link to={`/author/${_.kebabCase(author.name)}/`}>{author.name}</Link>
+                  <Link to="/pages/author">{author.name}</Link>
                   {post.frontmatter.author.length - 1 > index && ', '}
                 </React.Fragment>
               ))}
@@ -95,14 +95,16 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
 
 const PostCardStyles = css`
   position: relative;
-  flex: 1 1 301px;
+  // flex: 1 1 500px;
+  width: calc(50% - 40px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 0 0 40px;
-  padding: 0 20px 40px;
+  margin: 20px;
+  padding: 40px;
   min-height: 220px;
   background-size: cover;
+  background-color: #fff;
 `;
 
 const PostCardLarge = css`

@@ -56,44 +56,43 @@ const About: React.FC = () => (
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>
-                  A starter template for Gatsby <br /> GitHub:{' '}
-                  <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
-                </h5>
+                <h3>コンセプト</h3>
+                <br />
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo finibus leo,
-                  non tempus magna vehicula ac. Maecenas mollis ante finibus pharetra imperdiet.
-                  Maecenas in aliquam purus. Nam et massa a nulla fermentum dapibus sit amet in
-                  neque. Ut ipsum ipsum, rhoncus a sodales pellentesque, interdum a elit. Nullam
-                  aliquam tellus nibh, eget laoreet dui aliquet non. Vestibulum malesuada ante at
-                  diam tempus, ac interdum risus scelerisque. Sed ipsum neque, vulputate porta diam
-                  eget, consequat blandit nulla. Integer volutpat velit vitae purus lacinia aliquam.
-                  Integer bibendum ipsum vitae magna pulvinar, nec vehicula dolor vulputate. Nulla
-                  eu massa id orci placerat finibus vel sit amet eros. Vestibulum quis consequat
-                  massa. Sed sagittis sollicitudin massa at commodo. Praesent diam nisi, imperdiet
-                  posuere eleifend nec, blandit ac massa.
+                  当サイトは、以下のコンセプトの下に開発しております。
                 </p>
+                <ul>
+                  <li>エンジニア転職を考えている方の判断材料となり得る情報を発信する</li>
+                  <li>同じ課題に直面した人の助けとなるような技術的知見を発信する</li>
+                </ul>
                 <p>
-                  Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                  aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                  blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc. Nam
-                  molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut ipsum
-                  non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus id,
-                  laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit ac.
-                  Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                  Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                  massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                  quam et massa.
+                  私自身、元々はエンジニアとは全く縁もゆかりも無い仕事をしておりました。
+                  そんな中でプログラミング学習の助けとなったのは、多くの技術記事や学習の体験記など、
+                  「いつか誰かの役に立つこと」を信じて発信された情報でした。
+                  まだまだ先人たちの情報を頼りに手探りで開発を行っている身ですが、
+                  私も同じように誰かの役に立つ情報を発信したいという想いが、このブログの出発点です。
                 </p>
+                <br />
+                <h3>主な記事のテーマ</h3>
+                <br />
                 <p>
-                  In nunc lacus, dapibus vitae lacus sit amet, efficitur iaculis neque. Suspendisse
-                  ut tellus quis leo vestibulum tincidunt. Aenean nec enim ac dolor lacinia semper.
-                  Ut sed laoreet libero. Nunc elementum sollicitudin accumsan. Nunc eu augue neque.
-                  Proin a tortor nibh. Cras eu nisl ornare sapien feugiat pellentesque. Mauris
-                  dignissim vel quam eu pellentesque. Integer sit amet posuere quam, eu ullamcorper
-                  odio. Nullam a lacus tempus sapien dignissim ullamcorper. In hac habitasse platea
-                  dictumst. Proin quis massa aliquam, feugiat tortor sit amet, tincidunt urna. Donec
-                  posuere pulvinar lectus, ac semper ipsum vulputate quis.
+                  具体的には、下記のテーマをメインに記事を執筆していきます。
+                </p>
+                <ul>
+                  <li>面接の際に重要視していること</li>
+                  <li>実務で獲得した技術的な知見</li>
+                  <li>実装に工夫が必要だった機能</li>
+                  <li>開発を行う上で便利なサービス</li>
+                </ul>
+                <br />
+                <h3>ブログの技術構成</h3>
+                <br />
+                <p>
+                  ブログはReactのSSGフレームワーク「Gatsby」を利用して開発しております。
+                  <br />
+                  ビルドした静的コンテンツはS3にデプロイし、CloudFrontから配信しております。
+                  <br />
+                  詳細は別の記事にてまとめる予定です。
                 </p>
               </div>
             </PostFullContent>

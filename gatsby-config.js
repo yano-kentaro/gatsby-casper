@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Casper',
     description: 'A port of the casper blog built for gatsby',
-    siteUrl: 'https://gatsby-casper.netlify.com', // full path to blog - no ending slash
+    siteUrl: 'https://www.kengineer.dev', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml.name',
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-casper.netlify.com',
+        siteUrl: 'https://www.kengineer.dev',
       },
     },
     'gatsby-plugin-typescript',
@@ -115,6 +115,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'kengineer-dev',
+        protocol: 'https',
+        hostname: 'www.kengineer.dev',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
@@ -123,7 +131,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'G-0RNHTZJNPT',
+        trackingId: 'UA-XXXX-Y',
         // Puts tracking script in the head instead of the body
         head: true,
         // IP anonymization for GDPR compliance

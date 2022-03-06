@@ -54,12 +54,12 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: 'Ghost',
+  title: 'KengineerBlog',
   description: '札幌WEB系エンジニアの技術ブログ',
   coverImage: 'img/blog-cover.png',
   logo: 'img/kengineer-dev-logo2.png',
   lang: 'ja',
-  siteUrl: 'https://gatsby-casper.netlify.com',
+  siteUrl: 'https://www.kengineer.dev',
   // facebook: 'https://www.facebook.com/ghost',
   twitter: 'https://twitter.com/_KEngineer_',
   showSubscribe: false,

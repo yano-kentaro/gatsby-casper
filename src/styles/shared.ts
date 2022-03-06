@@ -29,8 +29,18 @@ export const SiteNavMain = css`
 
 export const SiteMain = css`
   flex-grow: 1;
-
-  @media (prefers-color-scheme: dark) {
+  background: linear-gradient(
+    45deg,
+    #005FFF 0%,
+    #005FFF 10%,
+    #4689FF 10%,
+    #4689FF 30%,
+    #8EB8FF 30%,
+    #8EB8FF 60%,
+    #D9E5FF 60%,
+    #D9E5FF 100%
+  );
+@media (prefers-color-scheme: dark) {
     background: ${colors.darkmode};
   }
 `;
@@ -72,7 +82,7 @@ export const PostFeed = css`
   flex-wrap: wrap;
   margin: 0 -20px;
   padding: 50px 0 0;
-  background: #fff;
+  // background: #fff;
 
   /* Special Template Styles */
   padding: 40px 0 5vw;

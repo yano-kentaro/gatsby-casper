@@ -19,7 +19,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-import { AuthorList } from '../components/AuthorList';
+// import { AuthorList } from '../components/AuthorList';
 
 export interface Author {
   name: string;
@@ -165,6 +165,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         )}
         {width && <meta property="og:image:width" content={width?.toString()} />}
         {height && <meta property="og:image:height" content={height?.toString()} />}
+        <script async src="//cdn.iframe.ly/embed.js" charSet="utf-8" />
       </Helmet>
       <Wrapper css={PostTemplate}>
         <header className="site-header">
@@ -178,59 +179,66 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
           <div css={inner}>
             {/* TODO: no-image css tag? */}
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
-              <PostFullHeader className="post-full-header">
-                <PostFullTags className="post-full-tags">
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && config.showAllTags && (
-                    post.frontmatter.tags.map((tag, idx) => (
-                      <React.Fragment key={tag}>
-                        {idx > 0 && (<>, &nbsp;</>)}
-                        <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
-                      </React.Fragment>
-                    ))
-                  )}
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && !config.showAllTags && (
-                    <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
-                      {post.frontmatter.tags[0]}
-                    </Link>
-                  )}
-                </PostFullTags>
-                <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
-                <PostFullCustomExcerpt className="post-full-custom-excerpt">
-                  {post.frontmatter.excerpt}
-                </PostFullCustomExcerpt>
-                <PostFullByline className="post-full-byline">
-                  <section className="post-full-byline-content">
-                    <AuthorList authors={post.frontmatter.author} tooltip="large" />
-                    <section className="post-full-byline-meta">
-                      <h4 className="author-name">
-                        {post.frontmatter.author.map(author => (
-                          <Link key={author.name} to={`/author/${_.kebabCase(author.name)}/`}>
-                            {author.name}
-                          </Link>
-                        ))}
-                      </h4>
-                      <div className="byline-meta-content">
-                        <time className="byline-meta-date" dateTime={datetime}>
-                          {displayDatetime}
-                        </time>
-                        <span className="byline-reading-time">
-                          <span className="bull">&bull;</span>{post.fields.readingTime.text}
-                        </span>
-                      </div>
-                    </section>
-                  </section>
-                </PostFullByline>
-              </PostFullHeader>
-
               {post.frontmatter.image && (
                 <PostFullImage>
                   <GatsbyImage
                     image={getImage(post.frontmatter.image)!}
-                    style={{ height: '100%' }}
+                    style={{ width: '100%' }}
                     alt={post.frontmatter.title} />
                 </PostFullImage>
               )}
-              <PostContent htmlAst={post.htmlAst} />
+
+              <div css={Container}>
+                <PostFullHeader className="post-full-header">
+                  <PostFullTags className="post-full-tags">
+                    {post.frontmatter.tags && post.frontmatter.tags.length > 0 && config.showAllTags && (
+                      post.frontmatter.tags.map((tag, idx) => (
+                        <React.Fragment key={tag}>
+                          {idx > 0 && (<>, &nbsp;</>)}
+                          <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
+                        </React.Fragment>
+                      ))
+                    )}
+                    {post.frontmatter.tags && post.frontmatter.tags.length > 0 && !config.showAllTags && (
+                      <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
+                        {post.frontmatter.tags[0]}
+                      </Link>
+                    )}
+                  </PostFullTags>
+                  <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
+                  <PostFullCustomExcerpt className="post-full-custom-excerpt">
+                    {post.frontmatter.excerpt}
+                  </PostFullCustomExcerpt>
+                  <br />
+                  <time className="byline-meta-date" dateTime={datetime}>
+                    投稿日：{displayDatetime}
+                  </time>
+                  {/* <PostFullByline className="post-full-byline">
+                    <section className="post-full-byline-content">
+                      <AuthorList authors={post.frontmatter.author} tooltip="large" />
+                      <section className="post-full-byline-meta">
+                        <h4 className="author-name">
+                          {post.frontmatter.author.map(author => (
+                            <Link key={author.name} to={`/author/${_.kebabCase(author.name)}/`}>
+                              {author.name}
+                            </Link>
+                          ))}
+                        </h4>
+                        <div className="byline-meta-content">
+                          <time className="byline-meta-date" dateTime={datetime}>
+                            {displayDatetime}
+                          </time>
+                          <span className="byline-reading-time">
+                            <span className="bull">&bull;</span>{post.fields.readingTime.text}
+                          </span>
+                        </div>
+                      </section>
+                    </section>
+                  </PostFullByline> */}
+                </PostFullHeader>
+
+                <PostContent htmlAst={post.htmlAst} />
+              </div>
 
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
@@ -254,7 +262,17 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 const PostTemplate = css`
   .site-main {
     margin-top: 64px;
-    background: #fff;
+    background: linear-gradient(
+      45deg,
+      #005FFF 0%,
+      #005FFF 10%,
+      #4689FF 10%,
+      #4689FF 30%,
+      #8EB8FF 30%,
+      #8EB8FF 60%,
+      #D9E5FF 60%,
+      #D9E5FF 100%
+    );
     padding-bottom: 4vw;
   }
 
@@ -263,6 +281,32 @@ const PostTemplate = css`
       /* background: var(--darkmode); */
       background: ${colors.darkmode};
     }
+  }
+`;
+
+const Container = css`
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-contents: center;
+  margin: 0 auto;
+  width: 75%;
+  padding: 6em;
+
+  @media (max-width: 1170px) {
+    width: 80%;
+    padding: 5em;
+  }
+
+  @media (max-width: 800px) {
+    width: 85%;
+    padding: 2em;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 1em;
   }
 `;
 
@@ -285,22 +329,23 @@ export const NoImage = css`
 export const PostFullHeader = styled.header`
   position: relative;
   margin: 0 auto;
-  padding: 70px 170px 50px;
+  // padding: 70px 170px 50px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  // background-color: #fff;
 
-  @media (max-width: 1170px) {
-    padding: 60px 11vw 50px;
-  }
+  // @media (max-width: 1170px) {
+  //   // padding: 60px 11vw 50px;
+  // }
 
-  @media (max-width: 800px) {
-    padding-right: 5vw;
-    padding-left: 5vw;
-  }
+  // @media (max-width: 800px) {
+  //   // padding-right: 5vw;
+  //   // padding-left: 5vw;
+  // }
 
-  @media (max-width: 500px) {
-    padding: 20px 0 35px;
-  }
+  // @media (max-width: 500px) {
+  //   // padding: 20px 0 35px;
+  // }
 `;
 
 const PostFullTags = styled.section`
@@ -318,7 +363,7 @@ const PostFullTags = styled.section`
 const PostFullCustomExcerpt = styled.p`
   margin: 20px 0 0;
   color: var(--midgrey);
-  font-family: Georgia, serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 2.3rem;
   line-height: 1.4em;
   font-weight: 300;
@@ -334,71 +379,71 @@ const PostFullCustomExcerpt = styled.p`
   }
 `;
 
-const PostFullByline = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 35px 0 0;
-  padding-top: 15px;
-  /* border-top: 1px solid color(var(--lightgrey) l(+10%)); */
-  border-top: 1px solid ${lighten('0.1', colors.lightgrey)};
+// const PostFullByline = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   margin: 35px 0 0;
+//   padding-top: 15px;
+//   /* border-top: 1px solid color(var(--lightgrey) l(+10%)); */
+//   border-top: 1px solid ${lighten('0.1', colors.lightgrey)};
 
-  .post-full-byline-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: flex-start;
-  }
+//   .post-full-byline-content {
+//     flex-grow: 1;
+//     display: flex;
+//     align-items: flex-start;
+//   }
 
-  .post-full-byline-content .author-list {
-    justify-content: flex-start;
-    padding: 0 12px 0 0;
-  }
+//   .post-full-byline-content .author-list {
+//     justify-content: flex-start;
+//     padding: 0 12px 0 0;
+//   }
 
-  .post-full-byline-meta {
-    margin: 2px 0 0;
-    /* color: color(var(--midgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.midgrey)};
-    font-size: 1.2rem;
-    line-height: 1.2em;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-  }
+//   .post-full-byline-meta {
+//     margin: 2px 0 0;
+//     /* color: color(var(--midgrey) l(+10%)); */
+//     color: ${lighten('0.1', colors.midgrey)};
+//     font-size: 1.2rem;
+//     line-height: 1.2em;
+//     letter-spacing: 0.2px;
+//     text-transform: uppercase;
+//   }
 
-  .post-full-byline-meta h4 {
-    margin: 0 0 3px;
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 500;
-  }
+//   .post-full-byline-meta h4 {
+//     margin: 0 0 3px;
+//     font-size: 1.3rem;
+//     line-height: 1.4em;
+//     font-weight: 500;
+//   }
 
-  .post-full-byline-meta h4 a {
-    /* color: color(var(--darkgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.darkgrey)};
-  }
+//   .post-full-byline-meta h4 a {
+//     /* color: color(var(--darkgrey) l(+10%)); */
+//     color: ${lighten('0.1', colors.darkgrey)};
+//   }
 
-  .post-full-byline-meta h4 a:hover {
-    /* color: var(--darkgrey); */
-    color: ${colors.darkgrey};
-  }
+//   .post-full-byline-meta h4 a:hover {
+//     /* color: var(--darkgrey); */
+//     color: ${colors.darkgrey};
+//   }
 
-  .post-full-byline-meta .bull {
-    display: inline-block;
-    margin: 0 4px;
-    opacity: 0.6;
-  }
+//   .post-full-byline-meta .bull {
+//     display: inline-block;
+//     margin: 0 4px;
+//     opacity: 0.6;
+//   }
 
-  @media (prefers-color-scheme: dark) {
-    /* border-top-color: color(var(--darkmode) l(+15%)); */
-    border-top-color: ${lighten('0.15', colors.darkmode)};
+//   @media (prefers-color-scheme: dark) {
+//     /* border-top-color: color(var(--darkmode) l(+15%)); */
+//     border-top-color: ${lighten('0.15', colors.darkmode)};
 
-    .post-full-byline-meta h4 a {
-      color: rgba(255, 255, 255, 0.75);
-    }
+//     .post-full-byline-meta h4 a {
+//       color: rgba(255, 255, 255, 0.75);
+//     }
 
-    .post-full-byline-meta h4 a:hover {
-      color: #fff;
-    }
-  }
-`;
+//     .post-full-byline-meta h4 a:hover {
+//       color: #fff;
+//     }
+//   }
+// `;
 
 export const PostFullTitle = styled.h1`
   margin: 0 0 0.2em;
@@ -415,7 +460,7 @@ export const PostFullTitle = styled.h1`
 
 const PostFullImage = styled.figure`
   margin: 25px 0 50px;
-  height: 800px;
+  height: 100%;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 5px;
@@ -429,11 +474,11 @@ const PostFullImage = styled.figure`
   }
 
   @media (max-width: 800px) {
-    height: 400px;
+    height: 100%;
   }
   @media (max-width: 500px) {
     margin-bottom: 4vw;
-    height: 350px;
+    height: 100%;
   }
 `;
 

@@ -82,7 +82,6 @@ const ReadNextCardArticle = styled.article`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 0 25px 50px;
   padding: 25px;
   /* background: linear-gradient(
     color(var(--darkgrey) l(+2%)),

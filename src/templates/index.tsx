@@ -16,11 +16,11 @@ import {
   outer,
   PostFeed,
   Posts,
-  SiteDescription,
+  // SiteDescription,
   SiteHeader,
-  SiteHeaderContent,
+  // SiteHeaderContent,
   SiteMain,
-  SiteTitle,
+  // SiteTitle,
   SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
@@ -86,7 +86,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         >
           <div css={inner}>
             <SiteNav isHome />
-            <SiteHeaderContent className="site-header-content">
+            {/* <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
@@ -99,7 +99,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 )}
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
-            </SiteHeaderContent>
+            </SiteHeaderContent> */}
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>

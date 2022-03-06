@@ -28,22 +28,22 @@ const PostContent = ({ htmlAst }: PostContentProps) => (
 export const PostFullContent = styled.section`
   position: relative;
   margin: 0 auto;
-  padding: 0 170px 6vw;
+  // padding: 0 170px 6vw;
   min-height: 230px;
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.6em;
-  background: #fff;
+  // background: #fff;
 
   @media (max-width: 1170px) {
-    padding: 0 11vw;
+    // padding: 0 11vw;
   }
   @media (max-width: 800px) {
-    padding: 0 5vw;
+    // padding: 0 5vw;
     font-size: 1.8rem;
   }
   @media (max-width: 500px) {
-    padding: 0;
+    // padding: 0;
   }
   @media (max-width: 500px) {
     .post-full-custom-excerpt {
@@ -276,10 +276,16 @@ export const PostFullContent = styled.section`
   }
 
   h2 {
-    margin: 0.5em 0 0.4em;
+    margin: 2em 0 1em;
     font-size: 3.2rem;
     line-height: 1.25em;
     font-weight: 600;
+    padding: 1.5rem;
+    -webkit-transform: skew(-15deg);
+    transform: skew(-15deg);
+    color: #fff;
+    background-image: -webkit-linear-gradient(left, #1a2d8b 0%, #4e90e0 100%);
+    background-image: linear-gradient(to right, #1a2d8b 0%, #4e90e0 100%);
   }
   p + h2 {
     margin-top: 0.8em;
@@ -293,10 +299,12 @@ export const PostFullContent = styled.section`
   }
 
   h3 {
-    margin: 0.5em 0 0.2em;
+    margin: 0.5em 0;
     font-size: 2.5rem;
     line-height: 1.3em;
     font-weight: 600;
+    border-left: 4px solid #4e90e0;
+    padding: 1rem 2rem;
   }
   h2 + h3 {
     margin-top: 0.7em;
@@ -667,6 +675,21 @@ export const PostFullContent = styled.section`
   .gatsby-highlight pre[class*='language-'] {
     float: left;
     min-width: 100%;
+  }
+
+  .iframely-responsive {
+    width: 80%;
+    hight: auto;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  @media (max-width: 800px) {
+    .iframely-responsive {
+      width: 100%
+    }
+  }
+  .iframely-responsive:hover {
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
   }
   /* End Syntax Highlighting */
 `;

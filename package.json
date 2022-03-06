@@ -11,7 +11,9 @@
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
     "start": "npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "gatsby clean",
+    "deploy": "gatsby-plugin-s3 deploy -y && aws cloudfront create-invalidation --distribution-id E1NPLIHZUE8J7 --paths \"/*\""
   },
   "dependencies": {
     "@emotion/react": "11.7.1",
@@ -28,6 +30,7 @@
     "gatsby-plugin-image": "2.7.0",
     "gatsby-plugin-postcss": "5.7.0",
     "gatsby-plugin-react-helmet": "5.7.0",
+    "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "4.7.0",
     "gatsby-plugin-sitemap": "5.7.0",
     "gatsby-plugin-typescript": "4.7.0",
@@ -46,12 +49,12 @@
     "polished": "4.1.4",
     "postcss-color-function": "4.1.0",
     "prism-themes": "1.9.0",
-    "reading-time": "1.5.0",
     "prismjs": "1.26.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-emotion": "10.0.0",
     "react-helmet": "6.1.0",
+    "reading-time": "1.5.0",
     "rehype-react": "7.0.4"
   },
   "devDependencies": {

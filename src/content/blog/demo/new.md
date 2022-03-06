@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Github Source
-image: img/callum-shaw-555357-unsplash.jpg
+image: ../../img/callum-shaw-555357-unsplash.jpg
 author: [Ken]
 date: 2022-02-28T10:00:00.000Z
 tags:
   - Source
 excerpt: Where to find this project on GitHub.
+draft: true
 ---
 
 ## __A few things you should know__
