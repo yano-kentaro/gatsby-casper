@@ -345,6 +345,9 @@ const IndexLayout: React.FC<IndexProps> = props => (
           ul ol,
           ol ul {
             margin: 0.5em 0 1em;
+          }
+          ol ul,
+          ul ul {
             list-style-type: circle;
           }
 
@@ -354,9 +357,14 @@ const IndexLayout: React.FC<IndexProps> = props => (
           ul ul ul,
           ul ol ol,
           ul ol ul,
-          ol ul ol
-          ol ul ul{
+          ol ul ol,
+          ol ul ul {
             margin: 0.5em 0 1em;
+          }
+          ol ol ul,
+          ul ul ul,
+          ul ol ul,
+          ol ul ul {
             list-style-type: square;
           }
 
