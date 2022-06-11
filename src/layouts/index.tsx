@@ -183,7 +183,7 @@ const IndexLayout: React.FC<IndexProps> = props => (
             overflow: hidden;
           }
           mark {
-            background-color: #fdffb6;
+            background-color: #D9E5FF;
           }
           code,
           kbd,
