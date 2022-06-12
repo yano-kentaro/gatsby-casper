@@ -8,7 +8,7 @@ excerpt: 転職活動を大きく左右する「運」を掴みに行くため�
 tags:
   - Job Change
   - Poem
-draft: false
+draft: true
 ---
 ---
 
